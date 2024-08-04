@@ -18348,7 +18348,8 @@ body {
 }
 /* Added ---------- */
 .nav-header{
-    color: rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.4);
   }
 
 .navbar-collapse .navbar {
@@ -18365,6 +18366,10 @@ body {
     z-index: 1030
 }
 
+.nav-item {
+    justify-content: left;
+}
+
 .navbar .navbar-nav {
     font-size: 20px;
     gap: 20px;
@@ -18376,10 +18381,11 @@ body {
 
 .navbar .navbar-nav .nav-link {
     position: relative;
+    left: 30px;
     color: white;
     min-width: 2rem;
     min-height: 2rem;
-    justify-content: center;
+    justify-content: left;
     border-radius: var(--tblr-border-radius)
 }
 
@@ -18505,7 +18511,7 @@ body {
     }
 }
 
-@media (max-width:767.98px) {
+@media (max-width:567.98px) {
     .navbar-expand-md .navbar-collapse {
         flex-direction: column
     }
@@ -18575,7 +18581,7 @@ body {
     }
 }
 
-@media (min-width:768px) {
+@media (min-width:368px) {
     .navbar-expand-md .navbar-collapse {
         flex: 1 1 auto;
         position: absolute;
@@ -18588,11 +18594,11 @@ body {
 
     .navbar-expand-md .nav-item.active:after {
         content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 100%; 
+        position: fixed;
+        height: 70px; 
+        width: 400px;
         z-index: 0; 
+        left: 0;
         background-color: #7FE18F;
         /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
     }

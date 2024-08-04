@@ -40,8 +40,8 @@
 <body>
     <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
 
-    <div class="page">
-        <header class="navbar navbar-expand-md d-print-none" style="height: 50px">
+    <div class="page" style="overflow: hidden;">
+        <header class="navbar navbar-expand-md d-print-none" style="height: 70px">
        
             <div class="container-xl">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
@@ -241,8 +241,8 @@
         <header class="navbar-expand-md">
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <div class="navbar" style="padding-bottom: 0px; padding-top: 0px; height: calc(100vh - 3.5rem);">
-                    <div class="container-xl" style="background-color: #3A4652;">
-                        <ul class="navbar-nav">
+                    <div class="container-xl" style="background-color: #3A4652; padding: 0px;">
+                        <ul class="navbar-nav" style="margin: 0; position: relative; left: 70px;">
 
                             <li class="nav-header">MAIN</li>
 
@@ -636,8 +636,8 @@
             </div>
         </header>
 
-        <div class="page-wrapper" style="position: relative; left: 400px">
-            <div style=" position:absolute; width: calc(100vw - 400px);">
+        <div class="page-wrapper" style="position: relative; left: 400px; padding: 0 50px;">
+            <div style=" position:absolute; width: calc(100vw - 400px); padding: 0 50px; left: 0px;">
                 @yield('content')
             </div>
 
