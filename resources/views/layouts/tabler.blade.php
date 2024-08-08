@@ -42,6 +42,7 @@
 
     <div class="page">
         <header class="navbar navbar-expand-md d-print-none">
+       
             <div class="container-xl">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
                     aria-controls="navbar-menu" aria-expanded="false" aria-label="Toggle navigation">
@@ -53,6 +54,25 @@
                             class="navbar-brand-image">
                     </a>
                 </h1>
+                <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
+                    <form action="./" method="get" autocomplete="off" novalidate>
+                        <div class="input-icon">
+                            <span class="input-icon-addon">
+                                <!-- Download SVG icon from http://tabler-icons.io/i/search -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                    height="24" viewBox="0 0 24 24" stroke-width="2"
+                                    stroke="currentColor" fill="none" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                                    <path d="M21 21l-6 -6" />
+                                </svg>
+                            </span>
+                            <input type="text" name="search" id="search" value=""
+                                class="form-control" placeholder="Search…" aria-label="Search in website">
+                        </div>
+                    </form>
+                </div>
                 <div class="navbar-nav flex-row order-md-last">
                     <div class="d-none d-md-flex">
 
@@ -146,7 +166,7 @@
                         <a href="#" class="nav-link d-flex lh-1 text-reset p-0" data-bs-toggle="dropdown"
                             aria-label="Open user menu">
                             <span class="avatar avatar-sm shadow-none"
-                                style="background-image: url({{ Auth::user()->photo ? asset('storage/profile/' . Auth::user()->photo) : asset('assets/img/illustrations/profiles/admin.jpg') }})">
+                                style="background-image: url('https://example.com/path/to/static/image.jpg');">
                             </span>
 
                             <div class="d-none d-xl-block ps-2">
@@ -214,13 +234,14 @@
 
 
                 </div>
+
             </div>
         </header>
 
         <header class="navbar-expand-md">
             <div class="collapse navbar-collapse" id="navbar-menu">
                 <div class="navbar">
-                    <div class="container-xl">
+                    <div class="container-xl" style="background-color: #3A4652;">
                         <ul class="navbar-nav">
                             <li class="nav-item {{ request()->is('dashboard*') ? 'active' : null }}">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
@@ -452,25 +473,7 @@
                             </li>
                         </ul>
 
-                        <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
-                            <form action="./" method="get" autocomplete="off" novalidate>
-                                <div class="input-icon">
-                                    <span class="input-icon-addon">
-                                        <!-- Download SVG icon from http://tabler-icons.io/i/search -->
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2"
-                                            stroke="currentColor" fill="none" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                            <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
-                                            <path d="M21 21l-6 -6" />
-                                        </svg>
-                                    </span>
-                                    <input type="text" name="search" id="search" value=""
-                                        class="form-control" placeholder="Search…" aria-label="Search in website">
-                                </div>
-                            </form>
-                        </div>
+
                     </div>
                 </div>
             </div>
