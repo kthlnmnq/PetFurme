@@ -19,6 +19,8 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NotificationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,14 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::post('products/import/', [ProductImportController::class, 'store'])->name('products.import.store');
     Route::get('products/export/', [ProductExportController::class, 'create'])->name('products.export.store');
     Route::resource('/products', ProductController::class);
+
+    // Route Notification <------
+    Route::get('/notification', function () {
+        return ''; // Empty response
+    })->name('notification');
+    
+    //Route::get('/notification', [NotificationController::class, 'index'])->name('notification');
+
 
     // Route POS
     Route::get('/pos', [PosController::class, 'index'])->name('pos.index');

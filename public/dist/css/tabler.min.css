@@ -4909,6 +4909,9 @@ fieldset:disabled .btn {
     isolation: isolate;
     border-color: var(--tblr-nav-tabs-link-hover-border-color)
 }
+.nav-item {
+    justify-content: flex-start;
+}
 
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
@@ -18343,6 +18346,10 @@ body {
     background: var(--tblr-navbar-bg);
     color: var(--tblr-navbar-color)
 }
+/* Added ---------- */
+.nav-header{
+    color: rgba(255, 255, 255, 0.5);
+  }
 
 .navbar-collapse .navbar {
     flex-grow: 1;
@@ -18359,6 +18366,8 @@ body {
 }
 
 .navbar .navbar-nav {
+    font-size: 20px;
+    gap: 20px;
     min-height: 3rem;
     margin-left: auto;
     margin-right: auto;
@@ -18582,10 +18591,12 @@ body {
         position: absolute;
         left: 0;
         right: 0;
-        bottom: -.25rem;
-        border: 0 var(--tblr-border-style) var(--tblr-navbar-active-border-color);
-        border-bottom-width: 2px
+        height: 100%; 
+        z-index: 0; 
+        background-color: #7FE18F;
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
     }
+    
 
     .navbar-expand-md.navbar-vertical {
         box-shadow: inset calc(-1 * var(--tblr-navbar-border-width)) 0 0 0 var(--tblr-navbar-border-color)

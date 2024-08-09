@@ -41,7 +41,7 @@
     <script src="{{ asset('dist/js/demo-theme.min.js') }}"></script>
 
     <div class="page">
-        <header class="navbar navbar-expand-md d-print-none">
+        <header class="navbar navbar-expand-md d-print-none" style="height: 50px">
        
             <div class="container-xl">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-menu"
@@ -240,9 +240,12 @@
 
         <header class="navbar-expand-md">
             <div class="collapse navbar-collapse" id="navbar-menu">
-                <div class="navbar">
+                <div class="navbar" style="padding-bottom: 0px; padding-top: 0px; height: calc(100vh - 3.5rem);">
                     <div class="container-xl" style="background-color: #3A4652;">
                         <ul class="navbar-nav">
+
+                            <li class="nav-header">MAIN</li>
+
                             <li class="nav-item {{ request()->is('dashboard*') ? 'active' : null }}">
                                 <a class="nav-link" href="{{ route('dashboard') }}">
                                     <span
@@ -257,12 +260,134 @@
                                             <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Dashboard') }}
                                     </span>
                                 </a>
                             </li>
 
+                            {{-- 
+                            PAG MAY LAMAN NA YUNG NOTIF!!!
+
+                            <li class="nav-item {{ request()->is('notification*') ? 'active' : null }}">
+                                <a class="nav-link" href="{{ route('notification') }}">
+                                    <span
+                                        class="nav-link-icon d-md-none d-lg-inline-block"><!-- Download SVG icon from http://tabler-icons.io/i/home -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24"
+                                            height="24" viewBox="0 0 24 24" stroke-width="2"
+                                            stroke="currentColor" fill="none" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                                            <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                                            <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        {{ __('Notification') }}
+                                    </span>
+                                </a>
+                            </li>
+                            --}}
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="return false;">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title" style="z-index: 1;">
+                                        {{ __('Notifications') }}
+                                    </span>
+                                </a>
+                            </li>
+
+
+                            {{--   MESSAGES & APPOINTMENTS NO routes/web.php && Http/Controllers  --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="return false;">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        {{ __('Messages') }}
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="return false;">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title" style="z-index: 1;">
+                                        {{ __('Appointmens') }}
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-header">ADMINISTRATION</li>
+
+
+
+                            {{--   USER MANAGEMENT & PETS NO routes/web.php && Http/Controllers  --}}
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
+                                    data-bs-auto-close="outside" role="button" aria-expanded="false">   
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title" style="z-index: 1;">
+                                        {{ __('User Management') }}
+                                    </span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <div class="dropdown-menu-columns">
+                                        <div class="dropdown-menu-column">
+                                            <a class="dropdown-item" href="{{ route('orders.index') }}">
+                                                {{ __('Pet Owner') }}
+                                            </a>
+                                            <a class="dropdown-item" href="{{ route('orders.complete') }}">
+                                                {{ __('Sub Admin') }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="return false;">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title" style="z-index: 1;">
+                                        {{ __('Pets') }}
+                                    </span>
+                                </a>
+                            </li>
+
+                            {{-- ETO MERON! --}}
 
                             <li class="nav-item {{ request()->is('products*') ? 'active' : null }}">
                                 <a class="nav-link" href="{{ route('products.index') }}">
@@ -285,7 +410,7 @@
                                             <path d="M12 8l5 -3" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Products') }}
                                     </span>
                                 </a>
@@ -310,7 +435,7 @@
                                             <path d="M19 15l3 3l-3 3" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Orders') }}
                                     </span>
                                 </a>
@@ -353,7 +478,7 @@
                                             <path d="M18 15l-3 3l3 3" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Purchases') }}
                                     </span>
                                 </a>
@@ -392,13 +517,45 @@
                                                 d="M17 21h-10a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h7l5 5v11a2 2 0 0 1 -2 2z" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Quotations') }}
                                     </span>
                                 </a>
                             </li>
 
+                            <li class="nav-header">REPORTS</li>
 
+
+                            {{--   SALES & APPOINTMENTS NO routes/web.php && Http/Controllers  --}}
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="return false;">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        {{ __('Sales') }}
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" onclick="return false;">
+                                    <span class="nav-link-icon d-md-none d-lg-inline-block">
+                                        <!-- Bell Icon SVG -->
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                            <path d="M5 17h14m-7 -2v2m-3 -2a3 3 0 0 1 6 0a2 2 0 0 1 -2 2a2 2 0 0 1 -2 -2m-1 2a1 1 0 0 1 -2 0m-1 -3a3 3 0 0 0 6 0a2 2 0 0 0 -2 -2h-2a2 2 0 0 0 -2 2z"/>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-link-title">
+                                        {{ __('Appointments') }}
+                                    </span>
+                                </a>
+                            </li>
 
                             <li
                                 class="nav-item dropdown {{ request()->is('suppliers*', 'customers*') ? 'active' : null }}">
@@ -416,7 +573,7 @@
                                             <path d="M16 16v2a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-8a2 2 0 0 1 2 -2h2" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Pages') }}
                                     </span>
                                 </a>
@@ -451,7 +608,7 @@
                                             <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
                                         </svg>
                                     </span>
-                                    <span class="nav-link-title">
+                                    <span class="nav-link-title" style="z-index: 1;">
                                         {{ __('Settings') }}
                                     </span>
                                 </a>
@@ -479,12 +636,12 @@
             </div>
         </header>
 
-        <div class="page-wrapper">
-            <div>
+        <div class="page-wrapper" style="position: relative; left: 400px">
+            <div style=" position:absolute; width: calc(100vw - 400px);">
                 @yield('content')
             </div>
 
-            <footer class="footer footer-transparent d-print-none">
+            {{-- <footer class="footer footer-transparent d-print-none">
                 <div class="container-xl">
                     <div class="row text-center align-items-center flex-row-reverse">
                         <div class="col-lg-auto ms-lg-auto">
@@ -529,7 +686,7 @@
                         </div>
                     </div>
                 </div>
-            </footer>
+            </footer> --}}
         </div>
     </div>
 
