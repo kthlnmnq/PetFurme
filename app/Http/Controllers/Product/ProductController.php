@@ -11,12 +11,13 @@ use App\Models\Unit;
 use Haruncpi\LaravelIdGenerator\IdGenerator;
 use Illuminate\Http\Request;
 use Picqer\Barcode\BarcodeGeneratorHTML;
-use Str;
+use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
     public function index()
     {
+        // Retrieve the count of products for the authenticated user
         $products = Product::where("user_id", auth()->id())->count();
 
         return view('products.index', [
@@ -26,9 +27,11 @@ class ProductController extends Controller
 
     public function create(Request $request)
     {
+        // Retrieve categories and units for the authenticated user
         $categories = Category::where("user_id", auth()->id())->get(['id', 'name']);
         $units = Unit::where("user_id", auth()->id())->get(['id', 'name']);
 
+        // Filter categories and units based on query parameters if provided
         if ($request->has('category')) {
             $categories = Category::where("user_id", auth()->id())->whereSlug($request->get('category'))->get();
         }
@@ -46,13 +49,14 @@ class ProductController extends Controller
     public function store(StoreProductRequest $request)
     {
         /**
-         * Handle upload image
+         * Handle image upload
          */
         $image = "";
         if ($request->hasFile('product_image')) {
             $image = $request->file('product_image')->store('products', 'public');
         }
 
+        // Create a new product with the provided data
         Product::create([
             "code" => IdGenerator::generate([
                 'table' => 'products',
@@ -60,7 +64,6 @@ class ProductController extends Controller
                 'length' => 4,
                 'prefix' => 'PC'
             ]),
-
             'product_image'     => $image,
             'name'              => $request->name,
             'category_id'       => $request->category_id,
@@ -77,16 +80,16 @@ class ProductController extends Controller
             "uuid" => Str::uuid()
         ]);
 
-
-        return to_route('products.index')->with('success', 'Product has been created!');
+        return redirect()
+            ->route('products.index')
+            ->with('success', 'Product has been created!');
     }
 
     public function show($uuid)
     {
+        // Retrieve product by UUID and generate a barcode
         $product = Product::where("uuid", $uuid)->firstOrFail();
-        // Generate a barcode
         $generator = new BarcodeGeneratorHTML();
-
         $barcode = $generator->getBarcode($product->code, $generator::TYPE_CODE_128);
 
         return view('products.show', [
@@ -97,6 +100,7 @@ class ProductController extends Controller
 
     public function edit($uuid)
     {
+        // Retrieve product by UUID and categories/units for the authenticated user
         $product = Product::where("uuid", $uuid)->firstOrFail();
         return view('products.edit', [
             'categories' => Category::where("user_id", auth()->id())->get(),
@@ -108,18 +112,23 @@ class ProductController extends Controller
     public function update(UpdateProductRequest $request, $uuid)
     {
         $product = Product::where("uuid", $uuid)->firstOrFail();
+
+        // Update product with all fields except 'product_image'
         $product->update($request->except('product_image'));
 
         $image = $product->product_image;
         if ($request->hasFile('product_image')) {
-
-            // Delete Old Photo
+            // Delete old image if exists
             if ($product->product_image) {
-                unlink(public_path('storage/') . $product->product_image);
+                $oldImagePath = public_path('storage/') . $product->product_image;
+                if (file_exists($oldImagePath)) {
+                    unlink($oldImagePath);
+                }
             }
             $image = $request->file('product_image')->store('products', 'public');
         }
 
+        // Update remaining product fields
         $product->name = $request->name;
         $product->slug = Str::slug($request->name, '-');
         $product->category_id = $request->category_id;
@@ -134,7 +143,6 @@ class ProductController extends Controller
         $product->product_image = $image;
         $product->save();
 
-
         return redirect()
             ->route('products.index')
             ->with('success', 'Product has been updated!');
@@ -142,14 +150,13 @@ class ProductController extends Controller
 
     public function destroy($uuid)
     {
+        // Retrieve product by UUID and delete its image if exists
         $product = Product::where("uuid", $uuid)->firstOrFail();
-        /**
-         * Delete photo if exists.
-         */
+
         if ($product->product_image) {
-            // check if image exists in our file system
-            if (file_exists(public_path('storage/') . $product->product_image)) {
-                unlink(public_path('storage/') . $product->product_image);
+            $imagePath = public_path('storage/') . $product->product_image;
+            if (file_exists($imagePath)) {
+                unlink($imagePath);
             }
         }
 

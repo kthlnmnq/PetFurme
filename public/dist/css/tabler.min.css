@@ -5573,6 +5573,7 @@ body[data-bs-theme=dark] [data-bs-theme=light] .navbar-toggler-icon {
     border-top: 0
 }
 
+
 .card-body {
     flex: 1 1 auto;
     padding: var(--tblr-card-spacer-y) var(--tblr-card-spacer-x);
@@ -23219,7 +23220,9 @@ a.card-title:hover {
 }
 
 .card-sm>.card-body {
-    padding: 1rem
+    padding: 1rem;
+    display: flex;
+    overflow: hidden;
 }
 
 @media (min-width:768px) {
@@ -23777,7 +23780,8 @@ a.card-title:hover {
 
 .row-deck>.col .card,
 .row-deck>[class*=col-] .card {
-    flex: 1 1 auto
+    flex: 1 1 auto;
+    height: 100px;
 }
 
 .row-cards {
@@ -27940,6 +27944,16 @@ img {
 .border-cyan {
     border-color: #17a2b8 !important
 }
+
+.bg-violet {
+    --tblr-bg-opacity: 1;
+    background-color: rgba(93, 74, 199, var(--tblr-bg-opacity)) !important;
+}
+.bg-orchid {
+    --bs-bg-opacity: 1;
+    background-color: rgba(187, 88, 205, var(--bs-bg-opacity)) !important;
+  }
+  
 
 .bg-facebook {
     --tblr-bg-opacity: 1;

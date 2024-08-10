@@ -641,6 +641,9 @@
             <div style=" position:absolute; width: calc(100vw - 400px); padding: 0 50px; left: 0px;">
                 @yield('content')
             </div>
+            <div style="position:absolute; background-color: #3A4652; top:30px">
+
+            </div>
 
             {{-- <footer class="footer footer-transparent d-print-none">
                 <div class="container-xl">
