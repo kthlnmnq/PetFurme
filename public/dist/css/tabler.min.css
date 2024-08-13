@@ -23781,7 +23781,7 @@ a.card-title:hover {
 .row-deck>.col .card,
 .row-deck>[class*=col-] .card {
     flex: 1 1 auto;
-    height: 100px;
+    height: 170px;
 }
 
 .row-cards {

@@ -161,6 +161,8 @@
 
                 <!-- COMMENT HANGGANG DITO -->
 
+                <!-- PETS -->
+
                 <div class="col-12">
                     <div class="row row-cards">
 
@@ -197,6 +199,8 @@
                             </div>
                         </div>
 
+                        <!-- PET OWNERS -->
+
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-sm">
                                 <div class="card-body">
@@ -229,6 +233,79 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- APPOINTMENTS -->
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span
+                                                class="bg-orchid text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
+                                                <img src="assets/img2/apmt_icon.png" alt="Appointment Icon"
+                                                    class="icon icon-tabler icon-tabler-files" width="24" height="24"
+                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M15 3v4a1 1 0 0 0 1 1h4" />
+                                                    <path
+                                                        d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" />
+                                                    <path
+                                                        d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                {{ $quotations }} Appointments
+                                            </div>
+                                            <div class="text-muted">
+                                                {{ $todayQuotations }} today
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- APPROVALS -->
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card card-sm">
+                                <div class="card-body">
+                                    <div class="row align-items-center">
+                                        <div class="col-auto">
+                                            <span
+                                                class="bg-orchid text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/brand-facebook -->
+                                                <img src="assets/img2/aprvl_icon.png" alt="Approval Icon"
+                                                    class="icon icon-tabler icon-tabler-files" width="24" height="24"
+                                                    viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+                                                    fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                                    <path d="M15 3v4a1 1 0 0 0 1 1h4" />
+                                                    <path
+                                                        d="M18 17h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h4l5 5v7a2 2 0 0 1 -2 2z" />
+                                                    <path
+                                                        d="M16 17v2a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-10a2 2 0 0 1 2 -2h2" />
+                                                </svg>
+                                            </span>
+                                        </div>
+                                        <div class="col">
+                                            <div class="font-weight-medium">
+                                                {{ $quotations }} Approvals
+                                            </div>
+                                            <div class="text-muted">
+                                                {{ $todayQuotations }} today
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- PRODUCTS -->
                     
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-sm">
@@ -237,7 +314,7 @@
                                         <div class="col-auto">
                                             <span
                                                 class="bg-primary text-white avatar"><!-- Download SVG icon from http://tabler-icons.io/i/currency-dollar -->
-                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                <img src="assets/img2/shop_icon.png" alt="Products Icon"
                                                     class="icon icon-tabler icon-tabler-packages" width="24"
                                                     height="24" viewBox="0 0 24 24" stroke-width="2"
                                                     stroke="currentColor" fill="none" stroke-linecap="round"
@@ -267,6 +344,11 @@
                                 </div>
                             </div>
                         </div>
+
+                        
+
+                        <!-- ORDERS -->
+
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-sm">
                                 <div class="card-body">
@@ -298,6 +380,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- PURCHASES -->
+
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-sm">
                                 <div class="card-body">
@@ -330,6 +415,9 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- QUOTATIONS -->
+
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-sm">
                                 <div class="card-body">
