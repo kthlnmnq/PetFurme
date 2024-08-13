@@ -1,25 +1,45 @@
-## ✨ Inventory Management System
+## PET MANAGEMENT SYSTEM
 
-Inventory Management System with Laravel 10 and MySql.
+Made with Laravel 10, Codeigniter and MySql.
 
-![Dashboard](https://user-images.githubusercontent.com/71541409/236858603-89e4be74-0a8b-4b4b-98b0-24e66ec5602d.png)
+![Dashboard](https://github.com/ReuAzel181/PetFurme/blob/main/public/assets/img2/image.png)
 
 ## 💀 Design Database
 ![Diagram Class](https://github.com/fajarghifar/inventory-management-system/assets/71541409/0c7d4163-96f5-4724-8741-4615e52ecf98)
 
 ## 😎 Features
-- POS
-- Orders
-  - Pending Orders
-  - Complete Orders
-  - Pending Due
-- Purchases
-  - All Purchases
-  - Approval Purchases
-  - Purchase Report
-- Products
-- Customers
-- Suppliers
+- **Pet Management**
+  - Add, update, and delete pet profiles
+  - View pet details and history
+- **Pet Owners**
+  - Manage pet owner profiles
+  - Link pets to their respective owners
+- **Appointments**
+  - Schedule and manage appointments for pets
+  - View appointment history
+- **Products**
+  - Manage pet-related products
+  - View product details and stock levels
+- **Orders**
+  - Create and manage orders
+  - View order status and history
+- **Reports**
+  - Generate reports on pets, orders, and products
+- **User Management**
+  - Admin and sub-admin roles
+  - Manage user access and permissions
+
+## List of Installed Packages
+├── @tabler/core@1.0.0-beta20
+├── autoprefixer@10.4.16
+├── axios@1.6.2
+├── js-beautify@1.15.1
+├── laravel-datatables-vite@0.5.2
+├── laravel-vite-plugin@0.7.8
+├── postcss@8.4.31
+├── tailwindcss@3.3.5
+├── vite-plugin-static-copy@0.17.1
+└── vite@4.5.3
 
 ## 🚀 How to Use
 
@@ -88,31 +108,22 @@ php artisan serve
 
 ```bash
 
-admin@admin.com
+1. admin@admin.com
+2. quest@quest.com
+3. user@user.com
 
 ```
 and password: 
 
 ```bash
 
-password
-
+1. password
+2. quest
+3. user
 ```
-
-## 🚀 Config
-
-1. **Config Chart**
-
-    Open file `./config/cart.php`. You can set a tax, format number, etc.
-    > For More details, visit this link [hardevine/shoppingcart](https://packagist.org/packages/hardevine/shoppingcart).
-
-## 📝 Contributing
-
-If you have any ideas to make it more interesting, please send a PR or create an issue for a feature request.
-
 # 🤝 License
 
 ### [MIT](LICENSE)
-
+> Orig Repo from @fajarghifar
 > Github [@fajarghifar](https://github.com/fajarghifar) &nbsp;&middot;&nbsp;
 > Instagram [@fajarghifar](https://instagram.com/fajarghifar)
