@@ -49,10 +49,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <h1 class="navbar-brand navbar-brand-autodark d-none-navbar-horizontal pe-0 pe-md-3">
-                    <a href="{{ url('/') }}">
-                        <img src="{{ asset('static/logo.svg') }}" width="110" height="32" alt="Tabler"
+                    <H style="margin: 0 50px 0 50px;">USER</H1>
+                    <!-- <a href="{{ url('/') }}">
+                        <img src="{{ asset('static/logo.svg') }}" width="110" height="32" alt="Hello"
                             class="navbar-brand-image">
-                    </a>
+                    </a> -->
                 </h1>
                 <div class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
                     <form action="./" method="get" autocomplete="off" novalidate>

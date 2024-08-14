@@ -19,9 +19,8 @@ use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UnitController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NotificationController;
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -42,6 +41,22 @@ Route::get('/', function () {
         return redirect('/dashboard');
     }
     return redirect('/login');
+});
+
+// Apply cache.response middleware to specific asset routes
+Route::middleware('cache.response')->group(function () {
+    // Static assets
+    Route::get('/dist/css/{file}', function($file) {
+        return response()->file(public_path("dist/css/{$file}"));
+    })->name('css.file');
+
+    Route::get('/dist/js/{file}', function($file) {
+        return response()->file(public_path("dist/js/{$file}"));
+    })->name('js.file');
+
+    Route::get('/assets/img2/{file}', function($file) {
+        return response()->file(public_path("assets/img2/{$file}"));
+    })->name('image.file');
 });
 
 Route::middleware(['auth', 'verified'])->group(function () {

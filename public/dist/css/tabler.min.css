@@ -4346,8 +4346,25 @@ fieldset:disabled .btn {
     opacity: 0
 }
 
+/* 
+Original Code -
 .collapse:not(.show) {
     display: none
+} */
+
+
+/* Bug - The main content don't adjust it's position even the sidebar are hid */
+.collapse:not(.show) {
+    /* visibility: hidden; */
+    position: absolute;
+}
+
+.collapse.show ~ .page-wrapper {
+    margin-left: 400px !important; /* Move content to the right to make space for sidebar */
+}
+
+.collapse:not(.show) ~ .page-wrapper {
+    margin-left: 0 !important;
 }
 
 .collapsing {
@@ -5219,9 +5236,9 @@ fieldset:disabled .btn {
         flex-basis: auto
     }
 
-    .navbar-expand-md .navbar-toggler {
+    /* .navbar-expand-md .navbar-toggler {
         display: none
-    }
+    } */
 
     .navbar-expand-md .offcanvas {
         position: static;

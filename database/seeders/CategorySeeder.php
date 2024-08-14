@@ -11,37 +11,42 @@ class CategorySeeder extends Seeder
     /**
      * Run the database seeds.
      */
+
+
     public function run(): void
     {
+
+        Category::truncate();
+        
         $categories = collect([
             [
-                'id'    => 1,
-                'name'  => 'Laptops',
-                'slug'  => 'laptops',
+                // 'id'    => 1,
+                'name'  => 'Food',
+                'slug'  => 'Food',
                 'user_id' => 1,
             ],
             [
-                'id'    => 2,
-                'name'  => 'Hardware',
-                'slug'  => 'hardware',
+                // 'id'    => 2,
+                'name'  => 'Toy',
+                'slug'  => 'Toy',
                 'user_id' => 1,
             ],
             [
-                'id'    => 3,
-                'name'  => 'Smartphones',
-                'slug'  => 'smartphones',
+                // 'id'    => 3,
+                'name'  => 'Grooming',
+                'slug'  => 'Grooming',
                 'user_id' => 1,
             ],
             [
-                'id'    => 4,
-                'name'  => 'Speakers',
-                'slug'  => 'speakers',
+                // 'id'    => 4,
+                'name'  => 'Medicine',
+                'slug'  => 'Medicine',
                 'user_id' => 1,
             ],
             [
-                'id'    => 5,
-                'name'  => 'Software',
-                'slug'  => 'software',
+                // 'id'    => 5,
+                'name'  => 'Accessory',
+                'slug'  => 'Accessory',
                 'user_id' => 1,
             ]
         ]);
